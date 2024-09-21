@@ -66,19 +66,20 @@ public class Calculator implements ActionListener {
          panel.setLayout(new GridLayout(4,4,10,10));
          panel.setBackground(Color.BLUE);
 
-         panel.add(numberButtons[0]);
          panel.add(numberButtons[1]);
          panel.add(numberButtons[2]);
-         panel.add(functionButtons[0]);
          panel.add(numberButtons[3]);
+         panel.add(functionButtons[0]);
          panel.add(numberButtons[4]);
          panel.add(numberButtons[5]);
-         panel.add(functionButtons[1]);
          panel.add(numberButtons[6]);
+         panel.add(functionButtons[1]);
+         panel.add(numberButtons[7]);
          panel.add(numberButtons[8]);
          panel.add(numberButtons[9]);
          panel.add(functionButtons[2]);
          panel.add(functionButtons[3]);
+         panel.add(numberButtons[0]);
          panel.add(functionButtons[4]);
          panel.add(functionButtons[5]);
          panel.add(functionButtons[6]);
@@ -100,6 +101,10 @@ public class Calculator implements ActionListener {
 
     @Override
     public void actionPerformed(ActionEvent e) {
+         for(int i=0; i<10; i++)
+             if(e.getSource()==numberButtons[i]){
+                 field.setText(field.getText().concat(String.valueOf(i)));
+             }
 
     }
 }
